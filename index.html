@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Target Goals</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1, h2, h3 {
+            color: #4285f4;
+        }
+        p {
+            color: #555;
+        }
+        ul, ol {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 10px;
+            list-style-type: none;
+        }
+        #countdown {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e44d26;
+            margin-top: 20px;
+            text-align: center;
+        }
+        #progress-bar-container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #ddd;
+            height: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        #progress-bar {
+            height: 100%;
+            width: 0;
+            background-color: #e44d26;
+            transition: width 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Target Goals</h1>
+        <p>Wednesday, December 20, 2023<br>4:00 PM</p>
+    </header>
+
+    <div id="countdown"></div>
+
+    <div id="progress-bar-container">
+        <div id="progress-bar"></div>
+    </div>
+
+    <script>
+        // Countdown and Progress Bar from Dec 26, 2023 to Apr 1, 2024
+        const targetDate = new Date('April 1, 2024 00:00:00').getTime();
+        const startDate = new Date('December 26, 2023 00:00:00').getTime();
+        const totalDays = (targetDate - startDate) / (1000 * 60 * 60 * 24);
+
+        const updateCountdownAndProgressBar = () => {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            document.getElementById('countdown').innerHTML = `Days until 1st April, 2024: ${days} days`;
+
+            // Update progress bar
+            const elapsedDays = (now - startDate) / (1000 * 60 * 60 * 24);
+            const progressPercentage = (elapsedDays / totalDays) * 100;
+            document.getElementById('progress-bar').style.width = `${progressPercentage}%`;
+        };
+
+        // Update countdown and progress bar every second
+        setInterval(updateCountdownAndProgressBar, 1000);
+    </script>
+
+    <section>
+        <h2>Goals List</h2>
+        <ul>
+            <li><input type="checkbox"> 30 min DSA streak from Jan 24 to Apr 24.</li>
+            <li><input type="checkbox"> 30 min Full Stack Open</li>
+            <li><input type="checkbox"> Workout and Meditation streak from Jan 24 to Apr 24.</li>
+            <li><input type="checkbox"> Finish 1 project.</li>
+            <li><input type="checkbox"> Finish "DSA San Diego - Data Structure course".</li>
+            <li><input type="checkbox"> Finish full stack open.</li>
+            <li><input type="checkbox"> Finish ChatGPT Prompt Engineering for Developers.</li>
+            <li><input type="checkbox"> Finish C++ Essentials part-1.</li>
+            <li><input type="checkbox"> Finish C++ Essential part-2.</li>
+            <li><input type="checkbox"> Gain weight to 55 kg.</li>
+            <li><input type="checkbox"> 1 complete program commit on GitHub</li>
+            <li><input type="checkbox"> Finish "Introduction to Object-Oriented Programming in C++ [Univ of London]"</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Streak Goals: from Jan 24 to Apr 24</h2>
+        <ul>
+            <li><input type="checkbox"> 30 min DSA streak</li>
+            <li><input type="checkbox"> 30 min Full Stack Open</li>
+            <li><input type="checkbox"> 1 complete program commit on GitHub. [write or rewrite C++ codes that I have studied][rep name: OOP/practice]</li>
+            <li><input type="checkbox"> Workout and Meditation streak</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Complete Goals By Apr 24</h2>
+        <ol>
+            <li><input type="checkbox"> Finish full stack open.</li>
+            <li><input type="checkbox"> Finish "DSA San Diego - Data Structure course".</li>
+            <li><input type="checkbox"> Finish C++ Essentials part-1.</li>
+            <li><input type="checkbox"> Finish C++ Essential part-2.</li>
+            <li><input type="checkbox"> Finish "Introduction to Object-Oriented Programming in C++ [Univ of London]".</li>
+            <li><input type="checkbox"> Finish 1 project.</li>
+            <li><input type="checkbox"> Finish ChatGPT Prompt Engineering for Developers.</li>
+            <li><input type="checkbox"> Gain weight to 55 kg.</li>
+        </ol>
+    </section>
+
+</body>
+</html>
+
