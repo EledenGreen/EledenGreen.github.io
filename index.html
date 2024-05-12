@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovating... please wait</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+    <style>
+body {
+    background-color: #b8dbd3; /* Initial background color */
+    font-family: 'Sacramento', cursive;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.5s ease; /* Background color transition */
+}
+
+@keyframes writing {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.animated-text {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: writing 5s steps(40, end) infinite;
+    font-size: 48px;
+    color: #333; /* Dark Text Color */
+}
+
+/* Hover effect to change background color */
+body:hover {
+    background-color: #ffdfba; /* Final background color on hover */
+}
+
+
+@keyframes writing {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+.animated-text {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: writing 5s steps(40, end) infinite;
+    font-size: 48px;
+    color: #333; /* Dark Text Color */
+}
+
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="content animated-text">
+        Innovating... please wait
+    </div>
+    <script>
+        const backgrounds = [
+            'url("background1.jpg")',
+            'url("background2.jpg")',
+            'url("background3.jpg")',
+            // Add more background image URLs as needed
+        ];
+
+        function getRandomBackground() {
+            const randomIndex = Math.floor(Math.random() * backgrounds.length);
+            return backgrounds[randomIndex];
+        }
+
+        document.querySelector('.background').style.backgroundImage = getRandomBackground();
+    </script>
+</body>
+</html>
